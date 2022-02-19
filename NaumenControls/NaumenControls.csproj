@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D7DDB357-F460-4AB9-AF19-B17C09B4F8B6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NaumenControls</RootNamespace>
+    <AssemblyName>NaumenControls</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\AddindDataPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AddindDataPanel.Designer.cs">
+      <DependentUpon>AddindDataPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CustomDataPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomDataPanel.Designer.cs">
+      <DependentUpon>CustomDataPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GettingDataPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\GettingDataPanel.Designer.cs">
+      <DependentUpon>GettingDataPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IAddindDataPanel.cs" />
+    <Compile Include="Controls\INaumenTask.cs" />
+    <Compile Include="Controls\XchangeDataPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XchangeDataPanel.Designer.cs">
+      <DependentUpon>XchangeDataPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NaumenTask.cs" />
+    <Compile Include="Controls\StructTypeWrap.cs" />
+    <Compile Include="Lists\ADataList.cs" />
+    <Compile Include="Lists\AddingCommentsList.cs" />
+    <Compile Include="Lists\AddingFilesList.cs" />
+    <Compile Include="Lists\GettingCommentsList.cs" />
+    <Compile Include="Lists\ConnectionsList.cs" />
+    <Compile Include="Lists\FilesList.cs" />
+    <Compile Include="Lists\IDataList.cs" />
+    <Compile Include="Lists\LSList.cs" />
+    <Compile Include="Lists\LSNumList.cs" />
+    <Compile Include="Lists\Structurs\AddingCommentStruct.cs" />
+    <Compile Include="Lists\Structurs\AddingFilesStruct.cs" />
+    <Compile Include="Lists\Structurs\GettingCommentStruct.cs" />
+    <Compile Include="Lists\Structurs\ConnectionStruct.cs" />
+    <Compile Include="Lists\Structurs\FilesStruct.cs" />
+    <Compile Include="Lists\Structurs\IDataStruct.cs" />
+    <Compile Include="Lists\Structurs\LSNumStruct.cs" />
+    <Compile Include="Lists\Structurs\LSStruct.cs" />
+    <Compile Include="Controls\LSInputBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LSInputBox.Designer.cs">
+      <DependentUpon>LSInputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controls\StructType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\AddindDataPanel.resx">
+      <DependentUpon>AddindDataPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\XchangeDataPanel.resx">
+      <DependentUpon>XchangeDataPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CustomDataPanel.resx">
+      <DependentUpon>CustomDataPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GettingDataPanel.resx">
+      <DependentUpon>GettingDataPanel.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SPKLib\CommonLib\CommonLib.csproj">
+      <Project>{5A3453C5-3F37-4A17-9F91-E914E1620A97}</Project>
+      <Name>CommonLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SPKLib\SPKCollections\SPKCollections.csproj">
+      <Project>{8FEF1D1A-405A-4D37-801D-01A11B92D44E}</Project>
+      <Name>SPKCollections</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

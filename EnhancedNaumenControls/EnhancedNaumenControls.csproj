@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8C48D361-1CDB-45E9-A3B3-F2BDA32798E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EnhancedNaumenControls</RootNamespace>
+    <AssemblyName>EnhancedNaumenControls</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NamedTask.cs" />
+    <Compile Include="RunnerPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RunnerPanel.Designer.cs">
+      <DependentUpon>RunnerPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StringTableView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StringTableView.Designer.cs">
+      <DependentUpon>StringTableView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TasksEventArgs.cs" />
+    <Compile Include="TasksPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TasksPanel.Designer.cs">
+      <DependentUpon>TasksPanel.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RunnerPanel.resx">
+      <DependentUpon>RunnerPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StringTableView.resx">
+      <DependentUpon>StringTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TasksPanel.resx">
+      <DependentUpon>TasksPanel.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SPKLib\CommonLib\CommonLib.csproj">
+      <Project>{5a3453c5-3f37-4a17-9f91-e914e1620a97}</Project>
+      <Name>CommonLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SPKLib\ListScript\ListScripts.csproj">
+      <Project>{496D1726-D569-410F-BD28-80779825D429}</Project>
+      <Name>ListScripts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SPKLib\SPKCollections\SPKCollections.csproj">
+      <Project>{8FEF1D1A-405A-4D37-801D-01A11B92D44E}</Project>
+      <Name>SPKCollections</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

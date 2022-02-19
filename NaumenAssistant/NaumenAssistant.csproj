@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{968FFD04-F40C-4CBC-AF15-89CD03A79724}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>NaumenAssistant</RootNamespace>
+    <AssemblyName>NaumenAssistant</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonLib">
+      <HintPath>..\..\SPKLib\CommonLib\bin\Debug\CommonLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\ListBoxMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\RemoveScriptMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\RenameScriptMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\ScriptsListMenu_.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ScriptsSettings.cs" />
+    <Compile Include="Scripts\NaumenAPIAdapters\NaumenAPIAdapter.cs" />
+    <Compile Include="Scripts\NaumenScriptLoader.cs" />
+    <Compile Include="Scripts\NaumenScriptRunner.cs" />
+    <Compile Include="Scripts\NaumenScriptWorker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\ScriptsEditorMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\ScriptsListMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Scripts\NaumenScriptEditor.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScriptsMenager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScriptsMenager.designer.cs">
+      <DependentUpon>ScriptsMenager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\NaumenScriptSettings.cs" />
+    <Compile Include="Scripts\NaumenTaskArgs.cs" />
+    <Compile Include="Scripts\NaumenTmpWriter.cs" />
+    <Compile Include="Scripts\NaumenAPIAdapters\NaumenAPIAdapters.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserDialog.Designer.cs">
+      <DependentUpon>UserDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ScriptsMenager.resx">
+      <DependentUpon>ScriptsMenager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserDialog.resx">
+      <DependentUpon>UserDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SPKLib\ActiveMenus\ActiveMenus.csproj">
+      <Project>{7fc2e513-3d29-4126-8f3b-7d55850308af}</Project>
+      <Name>ActiveMenus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SPKLib\ListScript\ListScripts.csproj">
+      <Project>{496D1726-D569-410F-BD28-80779825D429}</Project>
+      <Name>ListScripts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SPKLib\SPKCollections\SPKCollections.csproj">
+      <Project>{8FEF1D1A-405A-4D37-801D-01A11B92D44E}</Project>
+      <Name>SPKCollections</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EnhancedNaumenControls\EnhancedNaumenControls.csproj">
+      <Project>{8C48D361-1CDB-45E9-A3B3-F2BDA32798E7}</Project>
+      <Name>EnhancedNaumenControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NaumenAPI\NaumenAPI.csproj">
+      <Project>{C1C5C07B-75F1-4777-BC27-23CC72A69410}</Project>
+      <Name>NaumenAPI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
