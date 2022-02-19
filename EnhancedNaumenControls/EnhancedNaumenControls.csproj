@@ -78,15 +78,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SPKLib\CommonLib\CommonLib.csproj">
+    <ProjectReference Include="..\SPKLib\CommonLib\CommonLib.csproj">
       <Project>{5a3453c5-3f37-4a17-9f91-e914e1620a97}</Project>
       <Name>CommonLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\SPKLib\ListScript\ListScripts.csproj">
-      <Project>{496D1726-D569-410F-BD28-80779825D429}</Project>
-      <Name>ListScripts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\SPKLib\SPKCollections\SPKCollections.csproj">
+    <ProjectReference Include="..\SPKLib\SPKCollections\SPKCollections.csproj">
       <Project>{8FEF1D1A-405A-4D37-801D-01A11B92D44E}</Project>
       <Name>SPKCollections</Name>
     </ProjectReference>
